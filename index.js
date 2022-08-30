@@ -1,4 +1,11 @@
 function hasTargetSum(array, target) {
+const numObj = {}//numbers in the array
+  for (const num of array) {
+    const anyOtherNum = target - num;
+    if (numObj[anyOtherNum]) return true;
+    numObj[num] = true
+  }
+  return false;
   // Write your algorithm here
 }
 
@@ -7,11 +14,12 @@ function hasTargetSum(array, target) {
 */
 
 /* 
-  Add your pseudocode here
+  if (target - any number in array = any other number in the array) return true
 */
 
 /*
-  Add written explanation of your solution here
+checks if any two integers in the array add up to the target.
+if any two inregers in the array add up the target, return true.
 */
 
 // You can run `node index.js` to view these console logs
